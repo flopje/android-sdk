@@ -23,7 +23,7 @@ RUN mkdir "$ANDROID_HOME" .android \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
  && rm sdk.zip \
- && touch repositories.cfg
+ && touch repositories.cfg \
  && cd ../android-sdk-linux/tools/bin/ \
  && yes | ./sdkmanager --update \
  && yes | ./sdkmanager --licenses
