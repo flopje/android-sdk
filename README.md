@@ -7,7 +7,7 @@ This image contains the latest versions of Android SDK and Gradle. Feel free to 
 ### Start a container and open the shell
 
 ```
-docker run -it thedrhax/android-sdk bash
+docker run -it flopje/android-sdk bash
 ```
 
 ### Build the project in current directory
