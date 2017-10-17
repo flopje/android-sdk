@@ -28,9 +28,10 @@ RUN mkdir "$ANDROID_HOME" .android \
 RUN touch .android/repositories.cfg
  
 # Accept all licences 
+RUN ./android-sdk-linux/tools/bin/sdkmanager "build-tools;25.0.2" "platforms;android-25"
 RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --update
 RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --licenses
-RUN yes | ./android-sdk-linux/tools/bin/sdkmanager "build-tools;25.0.2"
+
  
 # Install Gradle
 RUN wget $GRADLE_URL -O gradle.zip \
