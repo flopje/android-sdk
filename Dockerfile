@@ -22,7 +22,7 @@ RUN mkdir "$ANDROID_HOME" .android \
  && cd "$ANDROID_HOME" \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
- && rm sdk.zip \
+ && rm sdk.zip 
  
 # Create repositories.cfg
 RUN touch .android/repositories.cfg
