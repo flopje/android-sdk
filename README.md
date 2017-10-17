@@ -1,4 +1,4 @@
-# Android SDK for Docker [![](https://images.microbadger.com/badges/image/thedrhax/android-sdk.svg)](https://hub.docker.com/r/thedrhax/android-sdk)
+# Android SDK for Docker [![](https://images.microbadger.com/badges/image/flopje/android-sdk.svg)](https://microbadger.com/images/flopje/android-sdk)
 
 This image contains the latest versions of Android SDK and Gradle. Feel free to contribute ;)
 
