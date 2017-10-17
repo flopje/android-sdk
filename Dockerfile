@@ -23,12 +23,14 @@ RUN mkdir "$ANDROID_HOME" .android \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
  && rm sdk.zip \
- && touch repositories.cfg \
- && cd ../android-sdk-linux/tools/bin/ \
- && yes | ./sdkmanager --update \
- && yes | ./sdkmanager --licenses
  
-
+# Create repositories.cfg
+RUN touch .android/repositories.cfg
+ 
+# Accept all licences 
+RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --update
+RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --licenses
+ 
 # Install Gradle
 RUN wget $GRADLE_URL -O gradle.zip \
  && unzip gradle.zip \
