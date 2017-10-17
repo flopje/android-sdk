@@ -1,7 +1,5 @@
 FROM openjdk:8
 
-MAINTAINER Dmitry Karikh <the.dr.hax@gmail.com>
-
 # Install Git and dependencies
 RUN dpkg --add-architecture i386 \
  && apt-get update \
@@ -25,9 +23,11 @@ RUN mkdir "$ANDROID_HOME" .android \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
  && rm sdk.zip \
- && mkdir licenses \
- && echo -n 8933bad161af4178b1185d1a37fbf41ea5269c55 \
-        > licenses/android-sdk-license
+ && touch repositories.cfg
+ && cd ../android-sdk-linux/tools/bin/ \
+ && yes | ./sdkmanager --update \
+ && yes | ./sdkmanager --licenses
+ 
 
 # Install Gradle
 RUN wget $GRADLE_URL -O gradle.zip \
