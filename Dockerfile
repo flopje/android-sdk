@@ -9,8 +9,8 @@ RUN dpkg --add-architecture i386 \
 
 # Set up environment variables
 ENV ANDROID_HOME="/home/user/android-sdk-linux" \
-    SDK_URL="https://dl.google.com/android/repository/tools_r25.2.5-linux.zip" \
-    GRADLE_URL="https://services.gradle.org/distributions/gradle-3.3-all.zip"
+    SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" \
+    GRADLE_URL="https://services.gradle.org/distributions/gradle-4.1-all.zip"
 
 # Create a non-root user
 RUN useradd -m user
@@ -28,7 +28,7 @@ RUN mkdir "$ANDROID_HOME" .android \
 RUN touch .android/repositories.cfg
  
 # Accept all licences 
-RUN ./android-sdk-linux/tools/bin/sdkmanager "build-tools;25.0.2" "platforms;android-25"
+RUN ./android-sdk-linux/tools/bin/sdkmanager "build-tools;26.0.2" "platforms;android-26"
 RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --update
 RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --licenses
 
