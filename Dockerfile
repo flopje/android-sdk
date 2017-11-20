@@ -36,7 +36,7 @@ RUN yes | ./android-sdk-linux/tools/bin/sdkmanager --licenses
 # Install Gradle
 RUN wget $GRADLE_URL -O gradle.zip \
  && unzip gradle.zip \
- && mv gradle-3.3 gradle \
+ && mv gradle-4.1 gradle \
  && rm gradle.zip \
  && mkdir .gradle
 
